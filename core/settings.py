@@ -13,7 +13,8 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-596o^vq@_1&$65tmre58hhu)390ci$t_*m810+)&0ggnyk4tjl
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '']
+ALLOWED_HOSTS = ['bookbuddiesbackend.herokuapp.com','.herokuapp.com', 'localhost', '']
 
 
 # Application definition
@@ -40,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework.authtoken',
-    "corsheaders",
     'bookbuddies',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -85,6 +86,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 # Needed for heroku converting to postgres
 import dj_database_url
