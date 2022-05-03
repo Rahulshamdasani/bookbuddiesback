@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 import dj_database_url
 DATABASES = {
     'default': dj_database_url.config(
-        default=config('DATABASE_URL')
+        default=dj_database_url.config(conn_max_age=600)
     )
 }
 # Needed for heroku converting to postgres
