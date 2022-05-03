@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -86,7 +86,8 @@ DATABASES = {
     }
 }
 # Needed for heroku converting to postgres
-import dj_database_url db_from_env = dj_database_url.config(conn_max_age=600) 
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600) 
 DATABASES['default'].update(db_from_env)
 
 
