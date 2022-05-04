@@ -24,8 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-596o^vq@_1&$65tmre58hhu)390ci$t_*m810+)&0ggnyk4tjl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ['bookbuddiesbackend.herokuapp.com','.herokuapp.com', 'localhost', '']
 
@@ -35,8 +35,8 @@ ALLOWED_HOSTS = ['bookbuddiesbackend.herokuapp.com','.herokuapp.com', 'localhost
 INSTALLED_APPS = [
     'rest_framework',
     'django.contrib.admin',
-    'gunicorn',
     'django.contrib.auth',
+    'gunicorn',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
