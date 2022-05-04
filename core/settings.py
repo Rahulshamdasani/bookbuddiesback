@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['bookbuddiesbackend.herokuapp.com','.herokuapp.com', 'localhost
 INSTALLED_APPS = [
     'rest_framework',
     'django.contrib.admin',
+    'gunicorn',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
